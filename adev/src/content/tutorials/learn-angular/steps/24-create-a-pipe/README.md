@@ -7,12 +7,14 @@ In this activity, you will create a custom pipe and use it in your template.
 <hr>
 
 A pipe is a TypeScript class with a `@Pipe` decorator. Here's an example:
+Note : Make your pipe as a standalone otherwise it cannot be imported in your other standalone components.
 
 ```ts
 import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'star',
+  standalone: true
 })
 export class StarPipe implements PipeTransform {
   transform(value: string): string {
@@ -36,7 +38,8 @@ In `reverse.pipe.ts` add the `@Pipe` decorator to the `ReversePipe` class and pr
 
 ```ts
 @Pipe({
-    name: 'reverse'
+    name: 'reverse',
+    standalone: true
 })
 ```
 
